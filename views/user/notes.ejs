@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="20x20" href="images/icon2.png">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="/css/notes.css">
+    <link rel="stylesheet" href="/css/sideNav.css">
+  </head>
+  <body>
+    <div class="container">
+      <% userInfo %>
+      <%- include("../components/sidebar.ejs",{username:userInfo.fname,page:'notes'})%>
+      <!-- ========================= Main ==================== -->
+      <div class="main">
+        <%- include("../components/navbar.ejs",{username:userInfo.fname})%>
+        <form action="/notes/add" class="create-note" method="post">
+          <div>
+            <label for="title">Title : </label>
+            <input type="text" name="title" id="title">
+          </div>
+          <div>
+            <label for="content">Content : </label>
+            <textarea name="content" id="content"></textarea>
+          </div>
+          <div class="btns">
+            <button type="submit" class="btn-add">Add</button>
+            <button type="reset">Reset</button>
+          </div>
+        </form>
+        <% allNotes %>
+        <ul class="notes-container">
+            <li class="add-note">
+              <i class="fa-solid fa-plus"></i>
+            </li>
+            <% if (allNotes) { %>
+              <% allNotes.forEach((elt)=>{ %>
+                <li class="note">
+                  <h2 class="title"><%= elt.title %></h2>
+                  <div class="content">
+                    <p><%= elt.content %></p>
+                  </div>
+                  <div>
+                    <span><%= elt.updatedAt %></span>
+                  </div>
+                </li>
+              <% }); %>
+            <% } %>
+        </ul>
+      </div> 
+    </div>
+    <!-- =========== Scripts =========  -->
+    <script src="/js/notes.js"></script>
+    <script src="/js/action.js"></script>
+  </body>
+</html>

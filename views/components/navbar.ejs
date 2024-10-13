@@ -1,0 +1,29 @@
+<div class="topbar">
+    <!-- =================  MENU =================== -->
+    <div class="toggle">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <!-- =================  SEARCH ================= -->
+    <div class="search">
+        <label>
+            <input type="text" placeholder="Search here">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </label>
+    </div>
+
+    <!-- ================ IMAGE USER ================ -->
+
+    <div class="user" style="width: 60px;height: 60px;" >
+        <% let imagesrc; let  nom=userInfo.fname  %>
+        <% if (userInfo.avatar) { %>
+            <% imagesrc=`/uploads/avatars/${userInfo.avatar}`%> 
+        <% } else { %>
+            <% imagesrc="/imgs/acceuil/imgLetter/"+nom[0].toUpperCase()+".png"%> 
+        <% } %>
+        <a href="/profil/<%=nom%>/get"><img  src=<%=imagesrc%> alt=""></a>
+        
+    </div>
+
+    
+</div>

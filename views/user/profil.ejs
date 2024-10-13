@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/sideNav.css">
+    <link rel="stylesheet" href="/css/profil.css">
+</head>
+<body>
+    <% userInfo %>
+    <div class="container">
+        <%- include('../components/sidebar.ejs',{username:userInfo.fname, page:"profil"}) %>
+        <div class="main">
+            <%- include('../components/navbar.ejs',{username:userInfo.fname , page:"profil"}) %>
+            <div class="main-content">
+                <div class="profil-container">
+                    <div class="profil-info">
+                        <div class="photo">
+                            <% let imagesrc %>
+                            <% if (userInfo.avatar && userInfo.avatar != '') { %>
+                                <%  imagesrc=`/uploads/avatars/${userInfo.avatar}`%> 
+                            <% } else { %>
+                                <% nom=userInfo.fname %>
+                                <%  imagesrc="/imgs/acceuil/imgLetter/"+nom[0].toUpperCase()+".png"%> 
+                            <% } %>
+                            <img src=<%=imagesrc%> alt="">
+                        </div>
+                        <div class="user-info">
+                            <div class="item">
+                                <p>Name : </p>
+                                <input type="text" value="<%=userInfo.fname  %>" readonly>
+                            </div>
+                            <div class="item">
+                                <p>Email : </p>
+                                <input type="text" value="<%= userInfo.email %>" readonly>
+                            </div>
+                            <div class="item">
+                                <p>PassWord : </p>
+                                <input type="text" value="***************" readonly>
+                            </div>
+                            <div class="item">
+                                <p>Age : </p>
+                                <input type="text" value="<%= userInfo.age? userInfo.age : 'Not Exist'   %>" readonly>
+                            </div>
+                            <div class="item">
+                                <p>Country : </p>
+                                <input type="text" value="<%=  userInfo.country || 'Not Exist'   %>" readonly>
+                            </div>
+                            <div class="item">
+                                <p>Phone Number : </p>
+                                <input type="text" value="<%=  userInfo.phone || 'Not Exist'   %>" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/profil/<%=userInfo.fname%>/update"><button>Update Your Profil Information</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/action.js"></script>    
+</body>
+</html>

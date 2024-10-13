@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="20x20" href="images/icon2.png">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/sideNav.css">
+    <link rel="stylesheet" href="/css/notes.css">
+  </head>
+  <body>
+    <div class="container">
+      <% userInfo %>
+      <%- include("../components/sidebar.ejs",{username:userInfo.fname,page:'task'})%>
+      <!-- ========================= Main ==================== -->
+      <div class="main">
+        <%- include("../components/navbar.ejs",{username:userInfo.fname})%>
+      </div> 
+    </div>
+    <!-- =========== Scripts =========  -->
+    <script src="/js/notes.js"></script>
+    <script src="/js/action.js"></script>
+  </body>
+</html>

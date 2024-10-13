@@ -1,0 +1,99 @@
+<div class="navigation">
+    <ul id="itemList">
+        <!-- =========================================================== debut title ================================= -->
+        <li>
+            <a href="#" class="brand">
+                <i class="fa-solid fa-hourglass icon_title" ></i>
+                <span class="title" style="font-size: 50px;font-weight: 800;margin-top:30px ;">Planify</span>
+            </a>
+        </li>
+        <hr style="width: 85%;margin: 5px auto 25px;">
+
+        <!-- =============================================================  fin title ==================================== -->
+        <li id="li1" class="<%= page=='profil' ? 'clicked' : null %>">
+            <a href="/profil/<%=username%>/get">
+                <span class="icon">
+                    <i class="fa-solid fa-gear"></i>
+                </span>
+                <span class="title"><%= username.toUpperCase() %></span>
+            </a>
+        </li>
+            <!-- =================== -->
+        <li id="li2" class="<%= page=='action' ? 'clicked' : null %>">
+            <a href="/action/add">
+                <span class="icon">
+                    <i class="fa-solid fa-plus"></i>
+                </span>
+                <span class="title">Add An Action </span>
+            </a>
+        </li>
+        <!-- =================== -->
+        <li  class="<%= page=='task' ? 'clicked' : null %>">
+            <a href="/task/add">
+                <span class="icon">
+                    <i class="fa-solid fa-list-check"></i>
+                </span>
+                <span class="title">Daily Tasks</span>
+            </a>
+        </li>
+        <!-- ====================== -->
+        <li class="<%= page=='notes' ? 'clicked' : null %>">
+            <a href="/notes/add">
+                <span class="icon">
+                    <i class="fa-solid fa-book"></i>
+                    <!-- <i class="fa-solid fa-comment"></i> -->
+                </span>
+                <span class="title">Add a Note</span>
+            </a>
+        </li>
+        <!-- ============================= -->
+
+        <li id="li3" class="<%= page=='activities' ? 'clicked' : null %>">
+            <a href="/activities/<%=username%>/action">
+                <span class="icon">
+                    <i class="fa-solid fa-chart-simple"></i>
+                </span>
+                <span class="title"> Activities </span>
+            </a>
+        </li>
+        <!-- ================== -->
+        <li id="li4" class="<%= page=='calendar' ? 'clicked' : null %>">
+            <a href="/calendar/<%=username%>/get">
+                <span class="icon">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </span>
+                <span class="title">Calendar</span>
+            </a>
+        </li>
+        <!-- =================== -->
+
+        <li id="li5" class="<%= page=='notification' ? 'clicked' : null %>">
+            <a href="#">
+                <span class="icon">
+                    <i class="fa-regular fa-bell"></i>
+                </span>
+                <span class="title">Notifications</span>
+            </a>
+        </li>
+        <!-- ===================== -->
+
+        <li id="li6" class="<%= page=='help' ? 'clicked' : null %>">
+            <a href="#">
+                <span class="icon">
+                    <i class="fa-solid fa-circle-question"></i>
+                </span>
+                <span class="title">Help</span>
+            </a>
+        </li>
+
+        <li id="li8">
+            <a href="/logout">
+                <span class="icon_out">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </span>
+                <span class="title">Sign out</span>
+            </a>
+        </li>
+        <!-- =============================  FIN ITEMS ========================== -->
+    </ul>
+</div>

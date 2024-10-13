@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel="icon" type="image/png" sizes="20x20" href="/imgs/forget/icon2.png">
+    <title> Planify | Forget Password</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/forget.css'>
+
+</head>
+<body>
+    
+    <div class="container" id="container">
+        <form class="form-container" id="myForm">
+            <h4> Enter your email address. </h4>
+            <h6 id="va-app">An email containing a new password will be sent to your address.</h6>
+            <div class="icon-champ" id="con-mail">
+                <i class="fa-solid fa-envelope"></i>
+                <span></span>
+                <input type="email" placeholder="Email" id="email" required>
+            </div>
+            <p class="error-show" id="emailError"></p>
+            <div class="btn-container">
+                <button type="submit" id="btn1">Send</button>
+                <button type="reset" id="btn2">Clear</button>
+            </div>
+        </form>
+        <hr>
+        <p class="retour" id="retour">Go Back To <a href="/auth/login"> Login </a>Page ?</p>
+    </div>
+    <script src="/js/forget.js"></script>
+</body>
+</html>

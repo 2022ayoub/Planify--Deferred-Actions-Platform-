@@ -1,0 +1,168 @@
+/* =========== Google Fonts ============ */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+:root {
+    --blue: #2a2185;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+    --purple: #b38add;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--purple);
+    border-radius: 50px;
+  }
+  
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .container {
+    position: relative;
+    width: 100%;
+    
+  }
+  
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+}
+.main.active {
+    width: calc(100% - 80px);
+    left: 80px;
+}
+.notes-container{
+    width: 100%;
+    padding:10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+li{
+  list-style: none;
+}
+.add-note{
+  width: 150px;
+  height: 150px;
+  background-color: #7452f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+.add-note i{
+  color: #fff;
+  font-size: 35px;
+  font-weight: 700;
+}
+
+form{
+  width: 300px;
+  height: 350px;
+  border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.1) , -10px -10px 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  transition: display 0.5s;
+  display: none;
+}
+form div{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0px 5px;
+}
+form div label{
+  font-size: 22px;
+  font-weight: 700px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  color:#2a2185;
+  text-decoration: underline;
+}
+form div input{
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  height: 30px;
+  padding-left: 10px;
+  outline: none;
+}
+form div input:focus , form div textarea:focus{
+  outline: none;
+  caret-color: #bbb;
+}
+form div textarea{
+  resize: none;
+  height: 150px;
+  padding-left: 10px;
+  caret-color: #bbb;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  padding-left: 10px;
+  outline: none;
+
+}
+
+div.btns{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap:7px;
+  padding-top: 10px;
+}
+div.btns button{
+  width: 75px;
+  height: 50px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #7452f3;
+  color: white;
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+}
+div.btns button:last-child{
+  background-color: #aaa;
+}
+
+
+.note{
+  width: 200px;
+  min-height: 400px;
+  border: 1px solid transparent;
+  
+}

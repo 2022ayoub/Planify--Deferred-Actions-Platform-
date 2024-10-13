@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="20x20" href="images/icon2.png">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- <link rel="stylesheet" href='/bootstrap-5.3.3/css/bootstrap.min.css'> -->
+    <link rel="stylesheet" href="/css/action.css">
+    <link rel="stylesheet" href="/media/action.css">
+    <link rel="stylesheet" href="/css/sideNav.css">
+  </head>
+  <body>
+    <div class="container">
+      <% userInfo %>
+      <%- include("../components/sidebar.ejs",{username:userInfo.fname,page:'action'})%>
+      <!-- ========================= Main ==================== -->
+      <div class="main">
+        <%- include("../components/navbar.ejs",{username:userInfo.fname})%>
+        <!-- ================================================ ADD Action ============================= -->
+        <div class="bigcontainer" id="bigcontainer">
+          <form action="/action/add"  method="post"  class="container" id="con-addAction">
+            <h2>Add An Action </h2>
+            <label for="title">Title : </label>
+            <input type="text" id="title" name="title"  required>
+            <label for="Description">Description : </label>
+            <textarea name="description" id="Description"></textarea>
+            <label for="Date">Date :</label>
+            <input type="date" id="Date" name="date-run" required>
+            <label for="Time">Time :</label>
+            <input type="time" id="Time" name="time-run" required>
+            <button style="width: 100%;height:50px;" type="submit" onclick="scheduleReminder();"> Add </button>
+          </form>
+        </div>
+        <audio src="sound1.wav" id="notificationSound"></audio>
+        <!-- ====================================================== Fin ACTION ============================== -->
+      </div> 
+    </div>
+    <!-- =========== Scripts =========  -->
+    <script src="/js/action.js"></script>
+  </body>
+</html>

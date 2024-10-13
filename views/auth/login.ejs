@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="20x20" href="/imgs/login/icon2.png">
+    <title>Planify | Login  </title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-in">
+            <form id="myForm" method="post" action="/auth/login">
+                <h1>Sign In</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email password</span>
+                <div class="icon-champ" id="con-mail">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span></span>
+                    <input type="email" placeholder="Email" id="email" required name="email">
+                </div>
+                <p id="emailError"></p>
+                <div class="icon-champ" id="con-password">
+                    <i class="fa-solid fa-lock"></i>
+                    <span></span>
+                    <input type="password" placeholder="Password" id="password" required name="password">
+                </div>
+                <p id="passwordError"></p>
+                <a href="/auth/forget" style="color: blue;" id="Forget">Forget Your Password?</a>
+                <div class="btn-container">
+                    <button type="submit" id="versUser">Sign In</button>
+                    <button type="reset">Clear</button>
+                </div>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Register with your personal details to use all of site features</p>
+                    <a href="/auth/register"><button class="hidden" id="register">Sign Up</button></a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/login.js"></script>
+</body>
+</html>
