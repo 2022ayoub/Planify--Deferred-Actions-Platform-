@@ -38,14 +38,16 @@
             </li>
             <% if (allNotes) { %>
               <% allNotes.forEach((elt)=>{ %>
-                <li class="note">
-                  <h2 class="title"><%= elt.title %></h2>
-                  <div class="content">
-                    <p><%= elt.content %></p>
+                <li class="ctn-note">
+                  <div class="title-note">
+                      <h3><%= elt.title %></h3>
+                      <div>
+                        <i class="fa-solid fa-pen update" ></i>
+                        <i class="fa-solid fa-trash delete"></i>
+                      </div>
                   </div>
-                  <div>
-                    <span><%= elt.updatedAt %></span>
-                  </div>
+                  <p class="pargdate"><%=moment(elt.updatedAt).format('YYYY-MM-DD hh:mm') %></p>
+                  <p class="main-text"><%= elt.content %></p>
                 </li>
               <% }); %>
             <% } %>

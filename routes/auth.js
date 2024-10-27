@@ -36,7 +36,7 @@ router.post("/register",async(req,res)=>{
             let cryptpass=await bcrypt.hashSync(data.password,salt);
             user.password=cryptpass;
             let msg=await user.save();
-            res.redirect("auth/login");
+            res.redirect("/auth/login");
         }
     }
     catch(err){

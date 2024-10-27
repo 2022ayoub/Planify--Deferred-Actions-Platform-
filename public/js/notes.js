@@ -9,11 +9,15 @@ addNote.addEventListener('click',()=>{
 });
 btn.addEventListener('click',()=>{
     form.style.display='none';
-    notes.style.display='flex'
+    notes.style.display='flex';
     
 });
 
-
-form.addEventListener('click',()=>{
-    
+const title=document.querySelector('#title');
+const content=document.querySelector('#content');
+form.addEventListener('submit',(event)=>{
+    event.preventDefault();
+    if(title.value.trim()!='' && content.value.trim()!=''){
+        form.submit()
+    }
 });
